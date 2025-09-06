@@ -8,8 +8,19 @@
   <link rel="icon" type="image/x-icon" href="Images/Dilo_imresizer.ico" />
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
   <style>
+    /* ...existing code... */
+.game-buttons button:hover {
+  background-color: rgb(116, 115, 115);
+  transform: scale(1.05);
+  transition: transform 0.2s, background-color 0.3s;
+}
+/* ...existing code... */
+h1 {
+  color: white;
+  font-size: 64px;
+}
     body {
-      background-color: #264726;
+      background-color: rgb(32, 32, 32);
       margin: 0;
       padding: 0;
       display: flex;
@@ -38,13 +49,13 @@
       margin-top: 0px;
       border-radius: 0px;
       border: none;
-      background-color: #97ba52;
+      background-color: white;
       color: white;
       cursor: pointer;
       transition: background-color 0.3s ease;
     }
     button:hover {
-      background-color: #97ba52;
+      background-color: white;
     }
 
     .game-buttons {
@@ -59,7 +70,7 @@
       padding: 10px;
       font-size: 14px;
       border-radius: 10px;
-      background-color: #064106;
+      background-color: #303030;
       color: white;
       border: none;
       cursor: pointer;

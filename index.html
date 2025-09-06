@@ -8,6 +8,11 @@
   <link rel="icon" type="image/x-icon" href="Images/Dilo_imresizer.ico" />
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
   <style>
+    body {
+    overflow: hidden;
+    padding: 0;
+    margin: 0;
+    }
     /* ...existing code... */
 .game-buttons button:hover {
   background-color: rgb(116, 115, 115);
@@ -125,10 +130,11 @@ h1 {
         var win = window.open()
         if (url) {
             var iframe = document.createElement("iframe")
-            iframe.style.border = "none";
+            iframe.style.border = "0px";
             iframe.style.width = "100%";
             iframe.style.height = "100%"
-            iframe.style.margin = "0";
+            iframe.style.margin = "0px";
+            iframe.style.padding = "0px";
             iframe.src = url;
             win.document.body.appendChild(iframe);
         }

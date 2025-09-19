@@ -7,12 +7,8 @@
   <title>Dilophosaurus Games</title>
   <link rel="icon" type="image/x-icon" href="Images/Dilo_imresizer.ico" />
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
   <style>
-    body {
-    overflow: hidden;
-    padding: 0;
-    margin: 0;
-    }
 .game-buttons button:hover {
   background-color: rgb(116, 115, 115);
   transform: scale(1.05);
@@ -24,13 +20,10 @@ h1 {
 }
     body {
       background-color: rgb(32, 32, 32);
-      margin: 0;
-      padding: 0;
       display: flex;
       flex-direction: column;
       align-items: center;
       font-family: Arial, sans-serif;
-
       background-image: url('background.jpg');
       background-size: cover;
       background-position: center;
@@ -47,9 +40,7 @@ h1 {
     }
 
     button {
-      padding: 0px;
       font-size: 16px;
-      margin-top: 0px;
       border-radius: 0px;
       border: none;
       background-color: white;
@@ -123,9 +114,19 @@ h1 {
     </div>
   </div>
   <script>
-    document.body.style.zoom="100%"
+    document.body.style.zoom="70%"
     function openGame(url){
-        window.open(url, '_blank');
+        var win = window.open()
+        if (url) {
+            var iframe = document.createElement("iframe")
+            iframe.style.border = "0px";
+            iframe.style.width = "100%";
+            iframe.style.height = "100%"
+            iframe.style.margin = "0px";
+            iframe.style.padding = "0px";
+            iframe.src = url;
+            win.document.body.appendChild(iframe);
+        }
     }  
   </script>
   <br><br><br><br>

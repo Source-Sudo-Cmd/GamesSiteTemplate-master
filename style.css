@@ -1,13 +1,36 @@
-* {
+/* Strong CSS Reset */
+*, *::before, *::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
 html, body {
-    margin: 0;
-    padding: 0;
+    margin: 0 !important;
+    padding: 0 !important;
     height: 100%;
     width: 100%;
     overflow: hidden;
+    border: 0;
+    outline: 0;
+}
+
+/* Remove default margins and padding from common elements */
+h1, h2, h3, h4, h5, h6, p, div, span, a, img, button, input, textarea, select, form, ul, ol, li {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+}
+
+/* Ensure no browser default spacing */
+body, html {
+    -webkit-margin-before: 0;
+    -webkit-margin-after: 0;
+    -webkit-margin-start: 0;
+    -webkit-margin-end: 0;
+    -webkit-padding-before: 0;
+    -webkit-padding-after: 0;
+    -webkit-padding-start: 0;
+    -webkit-padding-end: 0;
 }

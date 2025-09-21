@@ -8,6 +8,7 @@
   <link rel="icon" type="image/x-icon" href="Images/Dilo_imresizer.ico" />
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
   <style>
 .game-buttons button:hover {
   background-color: rgb(116, 115, 115);
@@ -84,13 +85,113 @@ h1 {
     .rounded-image {
       border-radius: 10px;
     }
+
+    /* Navigation Tab Styles */
+    .nav-tab {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background-color: rgba(48, 48, 48, 0.95);
+      backdrop-filter: blur(10px);
+      padding: 15px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      z-index: 1000;
+      border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .games-icon {
+      color: #4CAF50;
+      font-size: 24px;
+      margin-right: 10px;
+    }
+
+    .nav-title {
+      color: white;
+      font-size: 20px;
+      font-weight: bold;
+      margin: 0;
+    }
+
+    .search-container {
+      display: flex;
+      align-items: center;
+      background-color: rgba(255, 255, 255, 0.1);
+      border-radius: 25px;
+      padding: 8px 15px;
+      transition: all 0.3s ease;
+    }
+
+    .search-container:hover {
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .search-container:focus-within {
+      background-color: rgba(255, 255, 255, 0.2);
+      box-shadow: 0 0 0 2px rgba(76, 175, 80, 0.3);
+    }
+
+    .search-input {
+      background: none;
+      border: none;
+      color: white;
+      font-size: 14px;
+      width: 200px;
+      outline: none;
+      padding: 5px 10px;
+    }
+
+    .search-input::placeholder {
+      color: rgba(255, 255, 255, 0.6);
+    }
+
+    .search-button {
+      background: none;
+      border: none;
+      color: rgba(255, 255, 255, 0.7);
+      cursor: pointer;
+      font-size: 16px;
+      padding: 5px;
+      transition: color 0.3s ease;
+    }
+
+    .search-button:hover {
+      color: #4CAF50;
+    }
+
+    /* Adjust body to account for fixed nav */
+    body {
+      padding-top: 80px;
+    }
   </style>
 </head>
 <body>
+  <!-- Navigation Tab -->
+  <nav class="nav-tab">
+    <div class="nav-left">
+      <i class="fas fa-gamepad games-icon"></i>
+      <h3 class="nav-title">Dilophosaurus Games</h3>
+    </div>
+    <div class="search-container">
+      <input type="text" class="search-input" placeholder="Search games..." id="gameSearch">
+      <button class="search-button" onclick="searchGames()">
+        <i class="fas fa-search"></i>
+      </button>
+    </div>
+  </nav>
+
   <div class="game-section">
     <p style="background-image: url('background.jpg');"></p>
     <br><br>
-    <h1>Dilophosaurus Games</h1>
+    <h1></h1>
     <br><br><br>
     <div class="game-buttons">
       <button onclick="openGame('bitlife/bitlife.html')"> <img src="img/3.webp" class="rounded-image">Play Bitlife!</button>
@@ -116,11 +217,39 @@ h1 {
   </div>
   <script>
     document.body.style.zoom="70%"
+    
     function openGame(url){
         if (url) {
             window.open(url, '_blank');
         }
-    }  
+    }
+
+    // Search functionality - works letter by letter as you type
+    function searchGames() {
+        const searchTerm = document.getElementById('gameSearch').value.toLowerCase();
+        const gameButtons = document.querySelectorAll('.game-buttons button');
+        
+        gameButtons.forEach(button => {
+            const gameText = button.textContent.toLowerCase();
+            if (gameText.includes(searchTerm)) {
+                button.style.display = 'flex';
+            } else {
+                button.style.display = 'none';
+            }
+        });
+    }
+
+    // Real-time search as you type
+    document.getElementById('gameSearch').addEventListener('input', function(e) {
+        searchGames(); // This will run every time you type a letter
+    });
+
+    // Allow search on Enter key press (optional)
+    document.getElementById('gameSearch').addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+            searchGames();
+        }
+    });
   </script>
   <br><br><br><br>
     <footer>

@@ -79,6 +79,98 @@ h1 {
       height: 96px;
       margin-bottom: 10px;
     }
+
+    /* Popular Games Section */
+    .popular-section {
+      width: 100%;
+      max-width: 1200px;
+      margin: 100px auto 20px auto;
+      padding: 20px;
+      background: rgba(74, 10, 3, 0.1);
+      border-radius: 15px;
+      border: 2px solid rgba(114, 13, 5, 0.3);
+    }
+
+    .popular-games {
+      display: flex;
+      justify-content: space-around;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    /* Switch positions of 1st and 2nd place */
+    #popular1 {
+      order: 2;
+    }
+
+    #popular2 {
+      order: 1;
+    }
+
+    #popular3 {
+      order: 3;
+    }
+
+    .popular-game {
+      display: flex;
+      align-items: center;
+      background: rgba(114, 13, 5, 0.2);
+      border: 2px solid rgba(114, 13, 5, 0.4);
+      border-radius: 12px;
+      padding: 15px;
+      min-width: 250px;
+      transition: all 0.3s ease;
+    }
+
+    .popular-game:hover {
+      background: rgba(114, 13, 5, 0.3);
+      border-color: rgba(114, 13, 5, 0.6);
+      transform: translateY(-2px);
+    }
+
+    .popular-rank {
+      font-size: 24px;
+      font-weight: bold;
+      color: #720d05;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 15px;
+    }
+
+    .popular-info {
+      flex: 1;
+    }
+
+    .popular-name {
+      font-size: 18px;
+      font-weight: bold;
+      color: white;
+      margin-bottom: 5px;
+    }
+
+    .popular-stats {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+    }
+
+    .popular-clicks, .popular-time {
+      font-size: 14px;
+      color: #cccccc;
+    }
+
+    .popular-clicks::before {
+      content: "👆 ";
+    }
+
+    .popular-time::before {
+      content: "⏱️ ";
+    }
     .rounded-image {
       border-radius: 10px;
     }
@@ -288,6 +380,63 @@ h1 {
       box-shadow: 0 0 5px rgba(114, 13, 5, 0.3);
     }
 
+    .form-group textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #720d05;
+      border-radius: 5px;
+      background-color: #2a2a2a;
+      color: white;
+      font-size: 14px;
+      font-family: Arial, sans-serif;
+      resize: vertical;
+      min-height: 80px;
+    }
+
+    .form-group textarea:focus {
+      outline: none;
+      border-color: #720d05;
+      box-shadow: 0 0 5px rgba(114, 13, 5, 0.3);
+    }
+
+    .form-group select {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #720d05;
+      border-radius: 5px;
+      background-color: #2a2a2a;
+      color: white;
+      font-size: 14px;
+    }
+
+    .form-group select:focus {
+      outline: none;
+      border-color: #720d05;
+      box-shadow: 0 0 5px rgba(114, 13, 5, 0.3);
+    }
+
+    .bug-report-section {
+      padding: 20px 0;
+    }
+
+    .bug-description {
+      color: #ccc;
+      margin-bottom: 20px;
+      text-align: center;
+      font-style: italic;
+    }
+
+    .game-request-section {
+      padding: 20px 0;
+    }
+
+    .request-description {
+      color: #ccc;
+      margin-bottom: 20px;
+      text-align: center;
+      font-style: italic;
+    }
+
     .btn {
       background-color: #720d05;
       color: white;
@@ -400,6 +549,201 @@ h1 {
       border: 1px solid rgba(114, 13, 5, 0.3);
     }
 
+    /* Game Overlay Styling */
+    .game-overlay {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.95);
+      z-index: 3000;
+    }
+
+    .game-container {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .game-header {
+      background-color: rgba(74, 10, 3, 0.95);
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid #720d05;
+    }
+
+    .game-title {
+      color: white;
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .game-controls {
+      display: flex;
+      gap: 15px;
+      align-items: center;
+    }
+
+    .control-button {
+      background: none;
+      border: none;
+      color: white;
+      cursor: pointer;
+      padding: 8px 12px;
+      border-radius: 5px;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .control-button:hover {
+      background-color: rgba(114, 13, 5, 0.3);
+      transform: scale(1.05);
+    }
+
+    .thumbs-container {
+      display: flex;
+      gap: 10px;
+    }
+
+    .thumbs-button {
+      background: none;
+      border: none;
+      color: #ccc;
+      cursor: pointer;
+      padding: 8px;
+      border-radius: 50%;
+      transition: all 0.3s ease;
+      font-size: 18px;
+    }
+
+    .thumbs-button:hover {
+      transform: scale(1.2);
+    }
+
+    .thumbs-button.liked {
+      color: #4CAF50;
+    }
+
+    .thumbs-button.disliked {
+      color: #f44336;
+    }
+
+    .game-frame {
+      flex: 1;
+      border: none;
+      background-color: white;
+    }
+
+    .comments-section {
+      background-color: #1a1a1a;
+      border-top: 2px solid #720d05;
+      height: 300px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .comments-header {
+      background-color: rgba(114, 13, 5, 0.3);
+      padding: 15px 20px;
+      color: white;
+      font-weight: bold;
+      border-bottom: 1px solid #720d05;
+    }
+
+    .comments-list {
+      flex: 1;
+      overflow-y: auto;
+      padding: 15px 20px;
+    }
+
+    .comment {
+      background-color: rgba(255, 255, 255, 0.05);
+      padding: 10px 15px;
+      margin-bottom: 10px;
+      border-radius: 8px;
+      border-left: 3px solid #720d05;
+    }
+
+    .comment-author {
+      color: #720d05;
+      font-weight: bold;
+      font-size: 12px;
+      margin-bottom: 5px;
+    }
+
+    .comment-text {
+      color: white;
+      font-size: 14px;
+    }
+
+    .comment-input-container {
+      padding: 15px 20px;
+      border-top: 1px solid #720d05;
+      display: flex;
+      gap: 10px;
+    }
+
+    .comment-input {
+      flex: 1;
+      padding: 10px;
+      border: 1px solid #720d05;
+      border-radius: 5px;
+      background-color: #2a2a2a;
+      color: white;
+      font-size: 14px;
+    }
+
+    .comment-input:focus {
+      outline: none;
+      border-color: #4a0a03;
+      box-shadow: 0 0 5px rgba(114, 13, 5, 0.3);
+    }
+
+    .comment-submit {
+      background-color: #720d05;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .comment-submit:hover {
+      background-color: #4a0a03;
+    }
+
+    .auth-section {
+      padding: 20px 0;
+    }
+
+    .user-info {
+      text-align: center;
+      margin-bottom: 20px;
+      padding: 20px;
+      background-color: rgba(114, 13, 5, 0.1);
+      border-radius: 10px;
+      border: 1px solid rgba(114, 13, 5, 0.3);
+    }
+
+    .user-info h3 {
+      color: #720d05;
+      margin-bottom: 10px;
+    }
+
+    .user-info p {
+      color: #ccc;
+      margin: 0;
+    }
+
     /* Adjust body to account for fixed nav */
     body {
       padding-top: 80px;
@@ -416,6 +760,18 @@ h1 {
       <button class="nav-tab-button" onclick="openSettings()">
         <i class="fas fa-cog"></i>
         Settings
+      </button>
+      <button class="nav-tab-button" onclick="openGameRequest()">
+        <i class="fas fa-plus-circle"></i>
+        Request Game
+      </button>
+      <button class="nav-tab-button" onclick="openBugReport()">
+        <i class="fas fa-bug"></i>
+        Bugs
+      </button>
+      <button class="nav-tab-button" id="authButton" onclick="openAuthModal()">
+        <i class="fas fa-user"></i>
+        <span id="authButtonText">Login</span>
       </button>
     </div>
     <div class="search-container">
@@ -489,39 +845,452 @@ h1 {
     </div>
   </div>
 
+  <!-- Bug Report Modal -->
+  <div id="bugReportModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2><i class="fas fa-bug"></i> Bug Report</h2>
+        <span class="close" onclick="closeBugReport()">&times;</span>
+      </div>
+      
+      <div class="bug-report-section">
+        <p class="bug-description">Found a bug? Help us improve Wine Games by reporting it!</p>
+        
+        <div class="form-group">
+          <label for="bugTitle">Game Issue or Website Issue:</label>
+          <input type="text" id="bugTitle" placeholder="Brief description of the issue" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="bugDescription">Detailed Description:</label>
+          <textarea id="bugDescription" placeholder="Please describe what happened, what you expected to happen, and steps to reproduce the bug..." rows="4" required></textarea>
+        </div>
+        
+        <div class="form-group">
+          <label for="bugSeverity">Severity:</label>
+          <select id="bugSeverity" required>
+            <option value="">Select severity</option>
+            <option value="Low">Low - Minor issue</option>
+            <option value="Medium">Medium - Affects functionality</option>
+            <option value="High">High - Major issue</option>
+            <option value="Critical">Critical - Site unusable</option>
+          </select>
+        </div>
+        
+        <div class="form-group">
+          <label for="userEmail">Your Email (optional):</label>
+          <input type="email" id="userEmail" placeholder="your.email@example.com">
+        </div>
+        
+        <div class="button-group">
+          <button class="btn" onclick="submitBugReport()">
+            <i class="fas fa-paper-plane"></i> Submit Report
+          </button>
+          <button class="btn" onclick="closeBugReport()" style="background-color: #666;">
+            <i class="fas fa-times"></i> Cancel
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Game Request Modal -->
+  <div id="gameRequestModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2><i class="fas fa-plus-circle"></i> Request a Game</h2>
+        <span class="close" onclick="closeGameRequest()">&times;</span>
+      </div>
+      
+      <div class="game-request-section">
+        <p class="request-description">Want to see a new game on Wine Games? Let us know what you'd like to play!</p>
+        
+        <div class="form-group">
+          <label for="gameName">Game Name:</label>
+          <input type="text" id="gameName" placeholder="Enter the name of the game you want" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="gameDescription">Game Description:</label>
+          <textarea id="gameDescription" placeholder="Tell us about the game - what type of game is it? What makes it fun?" rows="3" required></textarea>
+        </div>
+        
+        <div class="form-group">
+          <label for="gameUrl">Game URL (if available):</label>
+          <input type="url" id="gameUrl" placeholder="https://example.com/game.html">
+        </div>
+        
+        <div class="form-group">
+          <label for="gameCategory">Game Category:</label>
+          <select id="gameCategory" required>
+            <option value="">Select category</option>
+            <option value="Action">Action</option>
+            <option value="Adventure">Adventure</option>
+            <option value="Arcade">Arcade</option>
+            <option value="Puzzle">Puzzle</option>
+            <option value="Racing">Racing</option>
+            <option value="Sports">Sports</option>
+            <option value="Strategy">Strategy</option>
+            <option value="Simulation">Simulation</option>
+            <option value="Other">Other</option>
+          </select>
+        </div>
+        
+        <div class="form-group">
+          <label for="userEmail">Your Email (optional):</label>
+          <input type="email" id="userEmail" placeholder="your.email@example.com">
+        </div>
+        
+        <div class="button-group">
+          <button class="btn" onclick="submitGameRequest()">
+            <i class="fas fa-paper-plane"></i> Submit Request
+          </button>
+          <button class="btn" onclick="closeGameRequest()" style="background-color: #666;">
+            <i class="fas fa-times"></i> Cancel
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Authentication Modal -->
+  <div id="authModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 id="authModalTitle"><i class="fas fa-user"></i> Login</h2>
+        <span class="close" onclick="closeAuthModal()">&times;</span>
+      </div>
+      
+      <div class="auth-section">
+        <div id="loginForm">
+          <div class="form-group">
+            <label for="loginEmail">Email:</label>
+            <input type="email" id="loginEmail" placeholder="your.email@example.com" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="loginPassword">Password:</label>
+            <input type="password" id="loginPassword" placeholder="Enter your password" required>
+          </div>
+          
+          <div class="button-group">
+            <button class="btn" onclick="loginUser()">
+              <i class="fas fa-sign-in-alt"></i> Login
+            </button>
+            <button class="btn" onclick="switchToSignup()" style="background-color: #666;">
+              <i class="fas fa-user-plus"></i> Sign Up
+            </button>
+          </div>
+        </div>
+        
+        <div id="signupForm" style="display: none;">
+          <div class="form-group">
+            <label for="signupEmail">Email:</label>
+            <input type="email" id="signupEmail" placeholder="your.email@example.com" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="signupPassword">Password:</label>
+            <input type="password" id="signupPassword" placeholder="Create a password" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="signupConfirmPassword">Confirm Password:</label>
+            <input type="password" id="signupConfirmPassword" placeholder="Confirm your password" required>
+          </div>
+          
+          <div class="button-group">
+            <button class="btn" onclick="signupUser()">
+              <i class="fas fa-user-plus"></i> Sign Up
+            </button>
+            <button class="btn" onclick="switchToLogin()" style="background-color: #666;">
+              <i class="fas fa-sign-in-alt"></i> Login
+            </button>
+          </div>
+        </div>
+        
+        <div id="userProfile" style="display: none;">
+          <div class="user-info">
+            <h3><i class="fas fa-user-circle"></i> Welcome, <span id="userDisplayName"></span>!</h3>
+            <p>Your game data is now synced and saved.</p>
+          </div>
+          
+          <div class="button-group">
+            <button class="btn" onclick="syncData()">
+              <i class="fas fa-sync"></i> Sync Data
+            </button>
+            <button class="btn" onclick="logoutUser()" style="background-color: #666;">
+              <i class="fas fa-sign-out-alt"></i> Logout
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Game Overlay -->
+  <div id="gameOverlay" class="game-overlay">
+    <div class="game-container">
+      <div class="game-header">
+        <div class="game-title" id="currentGameTitle">Game Title</div>
+        <div class="game-controls">
+          <div class="thumbs-container">
+            <button class="thumbs-button" id="thumbsUp" onclick="toggleThumbs('up')">
+              <i class="fas fa-thumbs-up"></i>
+            </button>
+            <button class="thumbs-button" id="thumbsDown" onclick="toggleThumbs('down')">
+              <i class="fas fa-thumbs-down"></i>
+            </button>
+          </div>
+          <button class="control-button" onclick="toggleFullscreen()">
+            <i class="fas fa-expand"></i> Fullscreen
+          </button>
+          <button class="control-button" onclick="closeGame()">
+            <i class="fas fa-times"></i> Close
+          </button>
+        </div>
+      </div>
+      <iframe id="gameFrame" class="game-frame" src=""></iframe>
+      <div class="comments-section">
+        <div class="comments-header">
+          <i class="fas fa-comments"></i> Comments
+        </div>
+        <div class="comments-list" id="commentsList">
+          <!-- Comments will be loaded here -->
+        </div>
+        <div class="comment-input-container">
+          <input type="text" class="comment-input" id="commentInput" placeholder="Write a comment..." onkeypress="handleCommentKeypress(event)">
+          <button class="comment-submit" onclick="submitComment()">
+            <i class="fas fa-paper-plane"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Popular Games Section -->
+  <div class="popular-section">
+    <h2 style="color: white; margin-bottom: 20px; font-size: 32px;">🔥 Popular Games</h2>
+    <div class="popular-games">
+      <div class="popular-game" id="popular1">
+        <div class="popular-rank">1</div>
+        <div class="popular-info">
+          <div class="popular-name">Loading...</div>
+          <div class="popular-stats">
+            <span class="popular-clicks">0 clicks</span>
+            <span class="popular-time">0 min played</span>
+          </div>
+        </div>
+      </div>
+      <div class="popular-game" id="popular2">
+        <div class="popular-rank">2</div>
+        <div class="popular-info">
+          <div class="popular-name">Loading...</div>
+          <div class="popular-stats">
+            <span class="popular-clicks">0 clicks</span>
+            <span class="popular-time">0 min played</span>
+          </div>
+        </div>
+      </div>
+      <div class="popular-game" id="popular3">
+        <div class="popular-rank">3</div>
+        <div class="popular-info">
+          <div class="popular-name">Loading...</div>
+          <div class="popular-stats">
+            <span class="popular-clicks">0 clicks</span>
+            <span class="popular-time">0 min played</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <div class="game-section">
     <p style="background-image: url('background.jpg');"></p>
     <br><br>
     <h1></h1>
     <br><br><br>
     <div class="game-buttons">
-      <button onclick="openGame('bitlife/bitlife.html')"> <img src="img/3.webp" class="rounded-image">Bitlife</button>
-      <button onclick="openGame('DriveMad/drivemad.html')"> <img src="img/8.webp" class="rounded-image">Drive Mad</button>
-      <button onclick="openGame('fnf/fnf.html')"> <img src="img/9.webp" class="rounded-image">Friday Night Funkin</button>
-      <button onclick="openGame('Hextris/hextris.html')"> <img src="img/10.webp" class="rounded-image">Hextris</button>
-      <button onclick="openGame('Mario/Mario.html')"> <img src="img/11.webp" class="rounded-image">Mario</button>
-      <button onclick="openGame('paperio2/paper.html')"> <img src="img/12.webp" class="rounded-image">Paper.io 2</button>
-      <button onclick="openGame('polytrack.3-main/polytrack.html')"> <img src="img/13.webp" class="rounded-image">PolyTrack</button>
-      <button onclick="openGame('Pong/pong.html')"> <img src="img/14.webp" class="rounded-image">Pong</button>
-      <button onclick="openGame('pvz/pvz.html')"> <img src="img/15.webp" class="rounded-image">PVZ</button>
-      <button onclick="openGame('Retrobowl/retro.html')"> <img src="img/17.webp" class="rounded-image">Retrobowl</button>
-      <button onclick="openGame('sandboxgame/sandbox.html')"> <img src="img/18.webp" class="rounded-image">Sandbox Game</button>
-      <button onclick="openGame('slope/slope.html')"> <img src="img/19.webp" class="rounded-image">Slope</button>
-      <button onclick="openGame('SubwaySurfers/subwaysurfers.html')"> <img src="img/21.webp" class="rounded-image">Subway Surfers</button>
-      <button onclick="openGame('Tetris/tetrisgame.html')"> <img src="img/22.webp" class="rounded-image">Tetris</button>
-      <button onclick="openGame('TimeShooter/timeshooter.html')"> <img src="img/23.webp" class="rounded-image">Time Shooter</button>
-      <button onclick="openGame('Tombofthemask/tomb.html')"> <img src="img/24.webp" class="rounded-image">Tomb Of The Mask</button>
-      <button onclick="openGame('WorldsHardestGame/whg.html')"> <img src="img/25.webp" class="rounded-image">Worlds Hardest Game</button>
-      <button onclick="openGame('windowkill/windowkill.html')"> <img src="img/26.webp" class="rounded-image">Windowkill</button>
-      <button onclick="openGame('yohoho/yohoho.html')"> <img src="img/27.webp" class="rounded-image">Yohoho.io</button>
+      <button onclick="openGame('bitlife/bitlife.html', 'Bitlife')"> <img src="img/3.webp" class="rounded-image">Bitlife</button>
+      <button onclick="openGame('DriveMad/drivemad.html', 'Drive Mad')"> <img src="img/8.webp" class="rounded-image">Drive Mad</button>
+      <button onclick="openGame('fnf/fnf.html', 'Friday Night Funkin')"> <img src="img/9.webp" class="rounded-image">Friday Night Funkin</button>
+      <button onclick="openGame('Hextris/hextris.html', 'Hextris')"> <img src="img/10.webp" class="rounded-image">Hextris</button>
+      <button onclick="openGame('Mario/Mario.html', 'Mario')"> <img src="img/11.webp" class="rounded-image">Mario</button>
+      <button onclick="openGame('paperio2/paper.html', 'Paper.io 2')"> <img src="img/12.webp" class="rounded-image">Paper.io 2</button>
+      <button onclick="openGame('polytrack.3-main/polytrack.html', 'PolyTrack')"> <img src="img/13.webp" class="rounded-image">PolyTrack</button>
+      <button onclick="openGame('Pong/pong.html', 'Pong')"> <img src="img/14.webp" class="rounded-image">Pong</button>
+      <button onclick="openGame('pvz/pvz.html', 'PVZ')"> <img src="img/15.webp" class="rounded-image">PVZ</button>
+      <button onclick="openGame('Retrobowl/retro.html', 'Retrobowl')"> <img src="img/17.webp" class="rounded-image">Retrobowl</button>
+      <button onclick="openGame('sandboxgame/sandbox.html', 'Sandbox Game')"> <img src="img/18.webp" class="rounded-image">Sandbox Game</button>
+      <button onclick="openGame('slope/slope.html', 'Slope')"> <img src="img/19.webp" class="rounded-image">Slope</button>
+      <button onclick="openGame('SubwaySurfers/subwaysurfers.html', 'Subway Surfers')"> <img src="img/21.webp" class="rounded-image">Subway Surfers</button>
+      <button onclick="openGame('Tetris/tetrisgame.html', 'Tetris')"> <img src="img/22.webp" class="rounded-image">Tetris</button>
+      <button onclick="openGame('TimeShooter/timeshooter.html', 'Time Shooter')"> <img src="img/23.webp" class="rounded-image">Time Shooter</button>
+      <button onclick="openGame('Tombofthemask/tomb.html', 'Tomb Of The Mask')"> <img src="img/24.webp" class="rounded-image">Tomb Of The Mask</button>
+      <button onclick="openGame('WorldsHardestGame/whg.html', 'Worlds Hardest Game')"> <img src="img/25.webp" class="rounded-image">Worlds Hardest Game</button>
+      <button onclick="openGame('windowkill/windowkill.html', 'Windowkill')"> <img src="img/26.webp" class="rounded-image">Windowkill</button>
+      <button onclick="openGame('yohoho/yohoho.html', 'Yohoho.io')"> <img src="img/27.webp" class="rounded-image">Yohoho.io</button>
     </div>
   </div>
   <script>
     document.body.style.zoom="70%"
     
-    function openGame(url){
+    let currentGameUrl = '';
+    let currentGameName = '';
+    let isFullscreen = false;
+    let gameStartTime = null;
+
+    // Game tracking data
+    let gameStats = JSON.parse(localStorage.getItem('gameStats')) || {};
+
+    function openGame(url, gameName){
         if (url) {
-            window.open(url, '_blank');
+            // Track game click
+            trackGameClick(gameName);
+            
+            // Start time tracking
+            gameStartTime = Date.now();
+            
+            currentGameUrl = url;
+            currentGameName = gameName;
+            document.getElementById('currentGameTitle').textContent = gameName;
+            document.getElementById('gameFrame').src = url;
+            document.getElementById('gameOverlay').style.display = 'block';
+            loadComments(gameName);
+            loadThumbs(gameName);
+        }
+    }
+
+    function closeGame() {
+        // Track time spent in game
+        if (gameStartTime && currentGameName) {
+            trackGameTime(currentGameName, Date.now() - gameStartTime);
+        }
+        
+        document.getElementById('gameOverlay').style.display = 'none';
+        document.getElementById('gameFrame').src = '';
+        currentGameUrl = '';
+        currentGameName = '';
+        gameStartTime = null;
+    }
+
+    function toggleFullscreen() {
+        const gameFrame = document.getElementById('gameFrame');
+        const fullscreenBtn = document.querySelector('.control-button[onclick="toggleFullscreen()"]');
+        
+        if (!isFullscreen) {
+            if (gameFrame.requestFullscreen) {
+                gameFrame.requestFullscreen();
+            } else if (gameFrame.webkitRequestFullscreen) {
+                gameFrame.webkitRequestFullscreen();
+            } else if (gameFrame.msRequestFullscreen) {
+                gameFrame.msRequestFullscreen();
+            }
+            fullscreenBtn.innerHTML = '<i class="fas fa-compress"></i> Exit Fullscreen';
+            isFullscreen = true;
+        } else {
+            if (document.exitFullscreen) {
+                document.exitFullscreen();
+            } else if (document.webkitExitFullscreen) {
+                document.webkitExitFullscreen();
+            } else if (document.msExitFullscreen) {
+                document.msExitFullscreen();
+            }
+            fullscreenBtn.innerHTML = '<i class="fas fa-expand"></i> Fullscreen';
+            isFullscreen = false;
+        }
+    }
+
+    function toggleThumbs(type) {
+        const thumbsUp = document.getElementById('thumbsUp');
+        const thumbsDown = document.getElementById('thumbsDown');
+        
+        if (type === 'up') {
+            if (thumbsUp.classList.contains('liked')) {
+                thumbsUp.classList.remove('liked');
+                thumbsDown.classList.remove('disliked');
+            } else {
+                thumbsUp.classList.add('liked');
+                thumbsDown.classList.remove('disliked');
+            }
+        } else {
+            if (thumbsDown.classList.contains('disliked')) {
+                thumbsUp.classList.remove('liked');
+                thumbsDown.classList.remove('disliked');
+            } else {
+                thumbsUp.classList.remove('liked');
+                thumbsDown.classList.add('disliked');
+            }
+        }
+        
+        // Save thumbs state
+        if (currentGameName) {
+            const thumbsState = {
+                up: thumbsUp.classList.contains('liked'),
+                down: thumbsDown.classList.contains('disliked')
+            };
+            localStorage.setItem(`thumbs_${currentGameName}`, JSON.stringify(thumbsState));
+        }
+    }
+
+    function loadThumbs(gameName) {
+        const thumbsState = localStorage.getItem(`thumbs_${gameName}`);
+        if (thumbsState) {
+            const state = JSON.parse(thumbsState);
+            const thumbsUp = document.getElementById('thumbsUp');
+            const thumbsDown = document.getElementById('thumbsDown');
+            
+            if (state.up) thumbsUp.classList.add('liked');
+            if (state.down) thumbsDown.classList.add('disliked');
+        }
+    }
+
+    function submitComment() {
+        const commentInput = document.getElementById('commentInput');
+        const commentText = commentInput.value.trim();
+        
+        if (commentText && currentGameName) {
+            const comment = {
+                text: commentText,
+                author: 'Anonymous User',
+                timestamp: new Date().toLocaleString()
+            };
+            
+            // Save comment to localStorage
+            const comments = JSON.parse(localStorage.getItem(`comments_${currentGameName}`) || '[]');
+            comments.push(comment);
+            localStorage.setItem(`comments_${currentGameName}`, JSON.stringify(comments));
+            
+            // Clear input and reload comments
+            commentInput.value = '';
+            loadComments(currentGameName);
+        }
+    }
+
+    function handleCommentKeypress(event) {
+        if (event.key === 'Enter') {
+            submitComment();
+        }
+    }
+
+    function loadComments(gameName) {
+        const commentsList = document.getElementById('commentsList');
+        const comments = JSON.parse(localStorage.getItem(`comments_${gameName}`) || '[]');
+        
+        commentsList.innerHTML = '';
+        
+        if (comments.length === 0) {
+            commentsList.innerHTML = '<div style="color: #666; text-align: center; padding: 20px;">No comments yet. Be the first to comment!</div>';
+        } else {
+            comments.forEach(comment => {
+                const commentDiv = document.createElement('div');
+                commentDiv.className = 'comment';
+                commentDiv.innerHTML = `
+                    <div class="comment-author">${comment.author} • ${comment.timestamp}</div>
+                    <div class="comment-text">${comment.text}</div>
+                `;
+                commentsList.appendChild(commentDiv);
+            });
         }
     }
 
@@ -568,15 +1337,311 @@ h1 {
         setActiveTab('games');
     }
 
+    function openGameRequest() {
+        document.getElementById('gameRequestModal').style.display = 'block';
+        setActiveTab('gameRequest');
+    }
+
+    function closeGameRequest() {
+        document.getElementById('gameRequestModal').style.display = 'none';
+        setActiveTab('games');
+    }
+
+    function openBugReport() {
+        document.getElementById('bugReportModal').style.display = 'block';
+        setActiveTab('bugs');
+    }
+
+    function closeBugReport() {
+        document.getElementById('bugReportModal').style.display = 'none';
+        setActiveTab('games');
+    }
+
+    function openAuthModal() {
+        document.getElementById('authModal').style.display = 'block';
+        setActiveTab('auth');
+    }
+
+    function closeAuthModal() {
+        document.getElementById('authModal').style.display = 'none';
+        setActiveTab('games');
+    }
+
     function setActiveTab(tabName) {
         const tabs = document.querySelectorAll('.nav-tab-button');
         tabs.forEach(tab => tab.classList.remove('active'));
         
         if (tabName === 'games') {
-            document.querySelector('.nav-tab-button[onclick="showGames()"]').classList.add('active');
+            // No active tab for games since we removed the games tab
         } else if (tabName === 'settings') {
             document.querySelector('.nav-tab-button[onclick="openSettings()"]').classList.add('active');
+        } else if (tabName === 'gameRequest') {
+            document.querySelector('.nav-tab-button[onclick="openGameRequest()"]').classList.add('active');
+        } else if (tabName === 'bugs') {
+            document.querySelector('.nav-tab-button[onclick="openBugReport()"]').classList.add('active');
+        } else if (tabName === 'auth') {
+            document.querySelector('.nav-tab-button[onclick="openAuthModal()"]').classList.add('active');
         }
+    }
+
+    // Authentication Functions
+    function switchToSignup() {
+        document.getElementById('loginForm').style.display = 'none';
+        document.getElementById('signupForm').style.display = 'block';
+        document.getElementById('userProfile').style.display = 'none';
+        document.getElementById('authModalTitle').innerHTML = '<i class="fas fa-user-plus"></i> Sign Up';
+    }
+
+    function switchToLogin() {
+        document.getElementById('loginForm').style.display = 'block';
+        document.getElementById('signupForm').style.display = 'none';
+        document.getElementById('userProfile').style.display = 'none';
+        document.getElementById('authModalTitle').innerHTML = '<i class="fas fa-user"></i> Login';
+    }
+
+    function showUserProfile(userEmail) {
+        document.getElementById('loginForm').style.display = 'none';
+        document.getElementById('signupForm').style.display = 'none';
+        document.getElementById('userProfile').style.display = 'block';
+        document.getElementById('authModalTitle').innerHTML = '<i class="fas fa-user-circle"></i> Profile';
+        document.getElementById('userDisplayName').textContent = userEmail;
+    }
+
+    function signupUser() {
+        const email = document.getElementById('signupEmail').value;
+        const password = document.getElementById('signupPassword').value;
+        const confirmPassword = document.getElementById('signupConfirmPassword').value;
+        
+        if (!email || !password || !confirmPassword) {
+            alert('Please fill in all fields.');
+            return;
+        }
+        
+        if (password !== confirmPassword) {
+            alert('Passwords do not match.');
+            return;
+        }
+        
+        if (password.length < 6) {
+            alert('Password must be at least 6 characters long.');
+            return;
+        }
+        
+        // Check if user already exists
+        const existingUsers = JSON.parse(localStorage.getItem('wineGamesUsers') || '{}');
+        if (existingUsers[email]) {
+            alert('User already exists. Please login instead.');
+            return;
+        }
+        
+        // Create new user
+        existingUsers[email] = {
+            password: password,
+            gameData: {},
+            createdAt: new Date().toISOString()
+        };
+        
+        localStorage.setItem('wineGamesUsers', JSON.stringify(existingUsers));
+        localStorage.setItem('wineGamesCurrentUser', email);
+        
+        // Sync existing data
+        syncUserData(email);
+        
+        alert('Account created successfully!');
+        showUserProfile(email);
+        updateAuthButton(email);
+    }
+
+    function loginUser() {
+        const email = document.getElementById('loginEmail').value;
+        const password = document.getElementById('loginPassword').value;
+        
+        if (!email || !password) {
+            alert('Please fill in all fields.');
+            return;
+        }
+        
+        const existingUsers = JSON.parse(localStorage.getItem('wineGamesUsers') || '{}');
+        
+        if (!existingUsers[email]) {
+            alert('User not found. Please sign up first.');
+            return;
+        }
+        
+        if (existingUsers[email].password !== password) {
+            alert('Incorrect password.');
+            return;
+        }
+        
+        localStorage.setItem('wineGamesCurrentUser', email);
+        syncUserData(email);
+        
+        alert('Login successful!');
+        showUserProfile(email);
+        updateAuthButton(email);
+    }
+
+    function logoutUser() {
+        localStorage.removeItem('wineGamesCurrentUser');
+        updateAuthButton(null);
+        switchToLogin();
+        alert('Logged out successfully!');
+    }
+
+    function updateAuthButton(userEmail) {
+        const authButton = document.getElementById('authButton');
+        const authButtonText = document.getElementById('authButtonText');
+        
+        if (userEmail) {
+            authButtonText.textContent = userEmail.split('@')[0];
+            authButton.onclick = function() { showUserProfile(userEmail); openAuthModal(); };
+        } else {
+            authButtonText.textContent = 'Login';
+            authButton.onclick = function() { openAuthModal(); };
+        }
+    }
+
+    function syncData() {
+        const currentUser = localStorage.getItem('wineGamesCurrentUser');
+        if (currentUser) {
+            syncUserData(currentUser);
+            alert('Data synced successfully!');
+        }
+    }
+
+    function syncUserData(userEmail) {
+        const users = JSON.parse(localStorage.getItem('wineGamesUsers') || '{}');
+        const userData = users[userEmail] || { gameData: {} };
+        
+        // Sync all game-related data
+        const gameData = {
+            customBackground: localStorage.getItem('customBackground'),
+            customBackgroundColor: localStorage.getItem('customBackgroundColor'),
+            customNavColor: localStorage.getItem('customNavColor'),
+            customButtonColor: localStorage.getItem('customButtonColor')
+        };
+        
+        // Sync comments and thumbs for all games
+        const gameNames = ['Bitlife', 'Drive Mad', 'Friday Night Funkin', 'Hextris', 'Mario', 'Paper.io 2', 'PolyTrack', 'Pong', 'PVZ', 'Retrobowl', 'Sandbox Game', 'Slope', 'Subway Surfers', 'Tetris', 'Time Shooter', 'Tomb Of The Mask', 'Worlds Hardest Game', 'Windowkill', 'Yohoho.io'];
+        
+        gameNames.forEach(gameName => {
+            const comments = localStorage.getItem(`comments_${gameName}`);
+            const thumbs = localStorage.getItem(`thumbs_${gameName}`);
+            
+            if (comments) gameData[`comments_${gameName}`] = comments;
+            if (thumbs) gameData[`thumbs_${gameName}`] = thumbs;
+        });
+        
+        userData.gameData = gameData;
+        users[userEmail] = userData;
+        localStorage.setItem('wineGamesUsers', JSON.stringify(users));
+    }
+
+    function loadUserData(userEmail) {
+        const users = JSON.parse(localStorage.getItem('wineGamesUsers') || '{}');
+        const userData = users[userEmail];
+        
+        if (userData && userData.gameData) {
+            // Restore all game data
+            Object.keys(userData.gameData).forEach(key => {
+                localStorage.setItem(key, userData.gameData[key]);
+            });
+        }
+    }
+
+    function submitGameRequest() {
+        const gameName = document.getElementById('gameName').value;
+        const gameDescription = document.getElementById('gameDescription').value;
+        const gameUrl = document.getElementById('gameUrl').value;
+        const gameCategory = document.getElementById('gameCategory').value;
+        const userEmail = document.getElementById('userEmail').value;
+        
+        // Validate required fields
+        if (!gameName || !gameDescription || !gameCategory) {
+            alert('Please fill in all required fields (Game Name, Description, and Category).');
+            return;
+        }
+        
+        // Create email content
+        const subject = `Wine Games Game Request: ${gameName}`;
+        const body = `Game Request Details:
+        
+Game Name: ${gameName}
+Category: ${gameCategory}
+Game URL: ${gameUrl || 'Not provided'}
+User Email: ${userEmail || 'Not provided'}
+
+Game Description:
+${gameDescription}
+
+---
+Requested from Wine Games website
+Timestamp: ${new Date().toLocaleString()}`;
+        
+        // Create mailto link
+        const mailtoLink = `mailto:glock43xsuperior@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        
+        // Open email client
+        window.open(mailtoLink);
+        
+        // Show success message
+        alert('Game request prepared! Your email client should open with the request details. Please send the email to complete the request.');
+        
+        // Clear form
+        document.getElementById('gameName').value = '';
+        document.getElementById('gameDescription').value = '';
+        document.getElementById('gameUrl').value = '';
+        document.getElementById('gameCategory').value = '';
+        document.getElementById('userEmail').value = '';
+        
+        // Close modal
+        closeGameRequest();
+    }
+
+    function submitBugReport() {
+        const title = document.getElementById('bugTitle').value;
+        const description = document.getElementById('bugDescription').value;
+        const severity = document.getElementById('bugSeverity').value;
+        const userEmail = document.getElementById('userEmail').value;
+        
+        // Validate required fields
+        if (!title || !description || !severity) {
+            alert('Please fill in all required fields (Title, Description, and Severity).');
+            return;
+        }
+        
+        // Create email content
+        const subject = `Wine Games Bug Report: ${title}`;
+        const body = `Bug Report Details:
+        
+Title: ${title}
+Severity: ${severity}
+User Email: ${userEmail || 'Not provided'}
+
+Description:
+${description}
+
+---
+Reported from Wine Games website
+Timestamp: ${new Date().toLocaleString()}`;
+        
+        // Create mailto link
+        const mailtoLink = `mailto:glock43xsuperior@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        
+        // Open email client
+        window.open(mailtoLink);
+        
+        // Show success message
+        alert('Bug report prepared! Your email client should open with the report details. Please send the email to complete the report.');
+        
+        // Clear form
+        document.getElementById('bugTitle').value = '';
+        document.getElementById('bugDescription').value = '';
+        document.getElementById('bugSeverity').value = '';
+        document.getElementById('userEmail').value = '';
+        
+        // Close modal
+        closeBugReport();
     }
 
     // Apply all settings functionality
@@ -700,8 +1765,63 @@ h1 {
         document.getElementById('buttonColorHex').textContent = color.toUpperCase();
     }
 
+    // Game tracking functions
+    function trackGameClick(gameName) {
+        if (!gameStats[gameName]) {
+            gameStats[gameName] = { clicks: 0, totalTime: 0 };
+        }
+        gameStats[gameName].clicks++;
+        localStorage.setItem('gameStats', JSON.stringify(gameStats));
+        updatePopularGames();
+    }
+
+    function trackGameTime(gameName, timeSpent) {
+        if (!gameStats[gameName]) {
+            gameStats[gameName] = { clicks: 0, totalTime: 0 };
+        }
+        gameStats[gameName].totalTime += timeSpent;
+        localStorage.setItem('gameStats', JSON.stringify(gameStats));
+        updatePopularGames();
+    }
+
+    function updatePopularGames() {
+        // Get all games and sort by popularity (clicks + time factor)
+        const games = Object.keys(gameStats).map(gameName => ({
+            name: gameName,
+            clicks: gameStats[gameName].clicks,
+            totalTime: gameStats[gameName].totalTime,
+            // Popularity score: clicks * 2 + time in minutes
+            popularity: gameStats[gameName].clicks * 2 + Math.floor(gameStats[gameName].totalTime / 60000)
+        }));
+
+        // Sort by popularity score
+        games.sort((a, b) => b.popularity - a.popularity);
+
+        // Update the top 3 popular games
+        for (let i = 0; i < 3; i++) {
+            const popularElement = document.getElementById(`popular${i + 1}`);
+            if (popularElement && games[i]) {
+                const game = games[i];
+                popularElement.querySelector('.popular-name').textContent = game.name;
+                popularElement.querySelector('.popular-clicks').textContent = `${game.clicks} clicks`;
+                popularElement.querySelector('.popular-time').textContent = `${Math.floor(game.totalTime / 60000)} min played`;
+            } else if (popularElement) {
+                // No data available
+                popularElement.querySelector('.popular-name').textContent = 'No data yet';
+                popularElement.querySelector('.popular-clicks').textContent = '0 clicks';
+                popularElement.querySelector('.popular-time').textContent = '0 min played';
+            }
+        }
+    }
+
     // Load saved settings on page load
     window.addEventListener('load', function() {
+        // Check for existing user login
+        const currentUser = localStorage.getItem('wineGamesCurrentUser');
+        if (currentUser) {
+            loadUserData(currentUser);
+            updateAuthButton(currentUser);
+        }
         // Load saved background image or color
         const savedBackground = localStorage.getItem('customBackground');
         const savedBackgroundColor = localStorage.getItem('customBackgroundColor');
@@ -742,13 +1862,29 @@ h1 {
             document.getElementById('buttonColorHex').textContent = savedButtonColor.toUpperCase();
             updateGameButtonHover(savedButtonColor);
         }
+        
+        // Initialize popular games section
+        updatePopularGames();
     });
 
-    // Close modal when clicking outside of it
+    // Close modals when clicking outside of them
     window.addEventListener('click', function(event) {
-        const modal = document.getElementById('settingsModal');
-        if (event.target === modal) {
+        const settingsModal = document.getElementById('settingsModal');
+        const gameRequestModal = document.getElementById('gameRequestModal');
+        const bugModal = document.getElementById('bugReportModal');
+        const authModal = document.getElementById('authModal');
+        
+        if (event.target === settingsModal) {
             closeSettings();
+        }
+        if (event.target === gameRequestModal) {
+            closeGameRequest();
+        }
+        if (event.target === bugModal) {
+            closeBugReport();
+        }
+        if (event.target === authModal) {
+            closeAuthModal();
         }
     });
   </script>

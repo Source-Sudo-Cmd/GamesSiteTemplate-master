@@ -4,14 +4,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Dilophosaurus Games</title>
-  <link rel="icon" type="image/x-icon" href="Images/Dilo_imresizer.ico" />
+  <title>Wine Games</title>
+  <link rel="icon" type="image/x-icon" href="Images/red-wine-club.ico" />
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
   <style>
 .game-buttons button:hover {
-  background-color: rgb(116, 115, 115);
+  background-color: #4a0a03;
   transform: scale(1.05);
   transition: transform 0.2s, background-color 0.3s;
 }
@@ -20,15 +20,12 @@ h1 {
   font-size: 64px;
 }
     body {
-      background-color: rgb(32, 32, 32);
+      background-color: #080808;
       display: flex;
       flex-direction: column;
       align-items: center;
       font-family: Arial, sans-serif;
-      background-image: url('background.jpg');
-      background-size: cover;
-      background-position: center;
-      background-attachment: fixed;
+      min-height: 100vh;
     }
 
 
@@ -65,7 +62,7 @@ h1 {
       padding: 0;
       font-size: 14px;
       border-radius: 10px;
-      background-color: #303030;
+      background-color: #4a0a03;
       color: white;
       border: none;
       cursor: pointer;
@@ -92,7 +89,7 @@ h1 {
       top: 0;
       left: 0;
       right: 0;
-      background-color: rgba(48, 48, 48, 0.95);
+      background-color: rgba(74, 10, 3, 0.95);
       backdrop-filter: blur(10px);
       padding: 15px 20px;
       display: flex;
@@ -109,7 +106,7 @@ h1 {
     }
 
     .games-icon {
-      color: #4CAF50;
+      color: #720d05;
       font-size: 24px;
       margin-right: 10px;
     }
@@ -164,7 +161,243 @@ h1 {
     }
 
     .search-button:hover {
-      color: #4CAF50;
+      color: #720d05;
+    }
+
+    /* Navigation tabs styling */
+    .nav-tabs {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .nav-tab-button {
+      background: none;
+      border: none;
+      color: white;
+      cursor: pointer;
+      padding: 8px 15px;
+      border-radius: 5px;
+      transition: all 0.3s ease;
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .nav-tab-button:hover {
+      transform: scale(1.1);
+      transition: transform 0.2s ease;
+      background-color: transparent !important;
+      color: white !important;
+    }
+
+    .nav-tab-button.active {
+      background-color: rgba(114, 13, 5, 0.5);
+      color: #720d05;
+    }
+
+    /* Settings modal styling */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 2000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    .modal-content {
+      background-color: #1a1a1a;
+      margin: 3% auto;
+      padding: 40px;
+      border: 2px solid #720d05;
+      border-radius: 10px;
+      width: 750px;
+      max-width: 95%;
+      max-height: 85vh;
+      color: white;
+      zoom: 1.2;
+      transform-origin: center;
+      overflow-y: auto;
+      overflow-x: hidden;
+    }
+
+    /* Custom scrollbar styling */
+    .modal-content::-webkit-scrollbar {
+      width: 8px;
+    }
+
+    .modal-content::-webkit-scrollbar-track {
+      background: rgba(114, 13, 5, 0.2);
+      border-radius: 4px;
+    }
+
+    .modal-content::-webkit-scrollbar-thumb {
+      background: #720d05;
+      border-radius: 4px;
+    }
+
+    .modal-content::-webkit-scrollbar-thumb:hover {
+      background: #4a0a03;
+    }
+
+    .modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .close {
+      color: #aaa;
+      font-size: 28px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .close:hover {
+      color: #720d05;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 5px;
+      color: white;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #720d05;
+      border-radius: 5px;
+      background-color: #2a2a2a;
+      color: white;
+      font-size: 14px;
+    }
+
+    .form-group input:focus {
+      outline: none;
+      border-color: #720d05;
+      box-shadow: 0 0 5px rgba(114, 13, 5, 0.3);
+    }
+
+    .btn {
+      background-color: #720d05;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: background-color 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #4a0a03;
+    }
+
+    .button-group {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      margin-top: 30px;
+    }
+
+    /* Advanced Color Picker Styling */
+    .settings-section {
+      margin-bottom: 30px;
+      padding: 20px;
+      background-color: rgba(114, 13, 5, 0.1);
+      border-radius: 10px;
+      border: 1px solid rgba(114, 13, 5, 0.3);
+    }
+
+    .section-title {
+      color: #720d05;
+      font-size: 18px;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      border-bottom: 2px solid rgba(114, 13, 5, 0.3);
+      padding-bottom: 10px;
+    }
+
+    .color-picker-group {
+      margin-bottom: 20px;
+    }
+
+    .color-picker-group label {
+      display: block;
+      margin-bottom: 8px;
+      color: white;
+      font-weight: 600;
+      font-size: 14px;
+    }
+
+    .color-picker-container {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      background-color: rgba(255, 255, 255, 0.05);
+      padding: 15px;
+      border-radius: 8px;
+      border: 1px solid rgba(114, 13, 5, 0.2);
+    }
+
+    .color-input {
+      width: 60px;
+      height: 60px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      background: none;
+      padding: 0;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .color-input:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+    }
+
+    .color-preview-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .color-preview {
+      width: 80px;
+      height: 40px;
+      border-radius: 8px;
+      border: 2px solid #720d05;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+      transition: transform 0.2s ease;
+    }
+
+    .color-preview:hover {
+      transform: scale(1.05);
+    }
+
+    .color-hex {
+      color: #ccc;
+      font-family: 'Courier New', monospace;
+      font-size: 12px;
+      font-weight: bold;
+      background-color: rgba(0, 0, 0, 0.3);
+      padding: 4px 8px;
+      border-radius: 4px;
+      border: 1px solid rgba(114, 13, 5, 0.3);
     }
 
     /* Adjust body to account for fixed nav */
@@ -177,8 +410,13 @@ h1 {
   <!-- Navigation Tab -->
   <nav class="nav-tab">
     <div class="nav-left">
-      <i class="fas fa-gamepad games-icon"></i>
-      <h3 class="nav-title">Dilophosaurus Games</h3>
+      <h3 class="nav-title">Wine Games</h3>
+    </div>
+    <div class="nav-tabs">
+      <button class="nav-tab-button" onclick="openSettings()">
+        <i class="fas fa-cog"></i>
+        Settings
+      </button>
     </div>
     <div class="search-container">
       <input type="text" class="search-input" placeholder="Search games..." id="gameSearch">
@@ -188,31 +426,94 @@ h1 {
     </div>
   </nav>
 
+  <!-- Settings Modal -->
+  <div id="settingsModal" class="modal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2>Settings</h2>
+        <span class="close" onclick="closeSettings()">&times;</span>
+      </div>
+      
+      <!-- Background Settings Section -->
+      <div class="settings-section">
+        <h3 class="section-title"><i class="fas fa-image"></i> Background Settings</h3>
+        
+        <div class="form-group">
+          <label for="backgroundUrl">Background Image URL:</label>
+          <input type="url" id="backgroundUrl" placeholder="https://example.com/image.jpg">
+        </div>
+        
+        <div class="color-picker-group">
+          <label for="backgroundColor">Background Color:</label>
+          <div class="color-picker-container">
+            <input type="color" id="backgroundColor" value="#080808" onchange="previewBackgroundColor()" class="color-input">
+            <div class="color-preview-container">
+              <div id="backgroundColorPreview" class="color-preview" style="background-color: #080808;"></div>
+              <span class="color-hex" id="backgroundColorHex">#080808</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Theme Colors Section -->
+      <div class="settings-section">
+        <h3 class="section-title"><i class="fas fa-palette"></i> Theme Colors</h3>
+        
+        <div class="color-picker-group">
+          <label for="navBarColor">Navigation Bar:</label>
+          <div class="color-picker-container">
+            <input type="color" id="navBarColor" value="#4a0a03" onchange="previewNavColor()" class="color-input">
+            <div class="color-preview-container">
+              <div id="navColorPreview" class="color-preview" style="background-color: #4a0a03;"></div>
+              <span class="color-hex" id="navColorHex">#4a0a03</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="color-picker-group">
+          <label for="gameButtonColor">Game Buttons:</label>
+          <div class="color-picker-container">
+            <input type="color" id="gameButtonColor" value="#4a0a03" onchange="previewButtonColor()" class="color-input">
+            <div class="color-preview-container">
+              <div id="buttonColorPreview" class="color-preview" style="background-color: #4a0a03;"></div>
+              <span class="color-hex" id="buttonColorHex">#4a0a03</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="button-group">
+        <button class="btn" onclick="applyAllSettings()">Apply All Changes</button>
+        <button class="btn" onclick="resetAllSettings()" style="background-color: #666;">Reset to Default</button>
+      </div>
+    </div>
+  </div>
+
   <div class="game-section">
     <p style="background-image: url('background.jpg');"></p>
     <br><br>
     <h1></h1>
     <br><br><br>
     <div class="game-buttons">
-      <button onclick="openGame('bitlife/bitlife.html')"> <img src="img/3.webp" class="rounded-image">Play Bitlife!</button>
-      <button onclick="openGame('DriveMad/drivemad.html')"> <img src="img/8.webp" class="rounded-image">Play Drive Mad!</button>
-      <button onclick="openGame('fnf/fnf.html')"> <img src="img/9.webp" class="rounded-image">Play Friday Night Funkin!</button>
-      <button onclick="openGame('Hextris/hextris.html')"> <img src="img/10.webp" class="rounded-image">Play Hextris!</button>
-      <button onclick="openGame('Mario/Mario.html')"> <img src="img/11.webp" class="rounded-image">Play Mario!</button>
-      <button onclick="openGame('paperio2/paper.html')"> <img src="img/12.webp" class="rounded-image">Play Paper.io 2!</button>
-      <button onclick="openGame('polytrack.3-main/polytrack.html')"> <img src="img/13.webp" class="rounded-image">Play PolyTrack!</button>
-      <button onclick="openGame('Pong/pong.html')"> <img src="img/14.webp" class="rounded-image">Play Pong!</button>
-      <button onclick="openGame('pvz/pvz.html')"> <img src="img/15.webp" class="rounded-image">Play PVZ!</button>
-      <button onclick="openGame('Retrobowl/retro.html')"> <img src="img/17.webp" class="rounded-image">Play Retrobowl!</button>
-      <button onclick="openGame('sandboxgame/sandbox.html')"> <img src="img/18.webp" class="rounded-image">Play Sandbox Game!</button>
-      <button onclick="openGame('slope/slope.html')"> <img src="img/19.webp" class="rounded-image">Play Slope!</button>
-      <button onclick="openGame('SubwaySurfers/subwaysurfers.html')"> <img src="img/21.webp" class="rounded-image">Play Subway Surfers!</button>
-      <button onclick="openGame('Tetris/tetrisgame.html')"> <img src="img/22.webp" class="rounded-image">Play Tetris!</button>
-      <button onclick="openGame('TimeShooter/timeshooter.html')"> <img src="img/23.webp" class="rounded-image">Play Time Shooter!</button>
-      <button onclick="openGame('Tombofthemask/tomb.html')"> <img src="img/24.webp" class="rounded-image">Play Tomb Of The Mask!</button>
-      <button onclick="openGame('WorldsHardestGame/whg.html')"> <img src="img/25.webp" class="rounded-image">Play Worlds Hardest Game!</button>
-      <button onclick="openGame('windowkill/windowkill.html')"> <img src="img/26.webp" class="rounded-image">Play Windowkill!</button>
-      <button onclick="openGame('yohoho/yohoho.html')"> <img src="img/27.webp" class="rounded-image">Play Yohoho.io!</button>
+      <button onclick="openGame('bitlife/bitlife.html')"> <img src="img/3.webp" class="rounded-image">Bitlife</button>
+      <button onclick="openGame('DriveMad/drivemad.html')"> <img src="img/8.webp" class="rounded-image">Drive Mad</button>
+      <button onclick="openGame('fnf/fnf.html')"> <img src="img/9.webp" class="rounded-image">Friday Night Funkin</button>
+      <button onclick="openGame('Hextris/hextris.html')"> <img src="img/10.webp" class="rounded-image">Hextris</button>
+      <button onclick="openGame('Mario/Mario.html')"> <img src="img/11.webp" class="rounded-image">Mario</button>
+      <button onclick="openGame('paperio2/paper.html')"> <img src="img/12.webp" class="rounded-image">Paper.io 2</button>
+      <button onclick="openGame('polytrack.3-main/polytrack.html')"> <img src="img/13.webp" class="rounded-image">PolyTrack</button>
+      <button onclick="openGame('Pong/pong.html')"> <img src="img/14.webp" class="rounded-image">Pong</button>
+      <button onclick="openGame('pvz/pvz.html')"> <img src="img/15.webp" class="rounded-image">PVZ</button>
+      <button onclick="openGame('Retrobowl/retro.html')"> <img src="img/17.webp" class="rounded-image">Retrobowl</button>
+      <button onclick="openGame('sandboxgame/sandbox.html')"> <img src="img/18.webp" class="rounded-image">Sandbox Game</button>
+      <button onclick="openGame('slope/slope.html')"> <img src="img/19.webp" class="rounded-image">Slope</button>
+      <button onclick="openGame('SubwaySurfers/subwaysurfers.html')"> <img src="img/21.webp" class="rounded-image">Subway Surfers</button>
+      <button onclick="openGame('Tetris/tetrisgame.html')"> <img src="img/22.webp" class="rounded-image">Tetris</button>
+      <button onclick="openGame('TimeShooter/timeshooter.html')"> <img src="img/23.webp" class="rounded-image">Time Shooter</button>
+      <button onclick="openGame('Tombofthemask/tomb.html')"> <img src="img/24.webp" class="rounded-image">Tomb Of The Mask</button>
+      <button onclick="openGame('WorldsHardestGame/whg.html')"> <img src="img/25.webp" class="rounded-image">Worlds Hardest Game</button>
+      <button onclick="openGame('windowkill/windowkill.html')"> <img src="img/26.webp" class="rounded-image">Windowkill</button>
+      <button onclick="openGame('yohoho/yohoho.html')"> <img src="img/27.webp" class="rounded-image">Yohoho.io</button>
     </div>
   </div>
   <script>
@@ -248,6 +549,206 @@ h1 {
     document.getElementById('gameSearch').addEventListener('keypress', function(e) {
         if (e.key === 'Enter') {
             searchGames();
+        }
+    });
+
+    // Navigation tab functionality
+    function showGames() {
+        // This function can be expanded to show/hide different sections
+        setActiveTab('games');
+    }
+
+    function openSettings() {
+        document.getElementById('settingsModal').style.display = 'block';
+        setActiveTab('settings');
+    }
+
+    function closeSettings() {
+        document.getElementById('settingsModal').style.display = 'none';
+        setActiveTab('games');
+    }
+
+    function setActiveTab(tabName) {
+        const tabs = document.querySelectorAll('.nav-tab-button');
+        tabs.forEach(tab => tab.classList.remove('active'));
+        
+        if (tabName === 'games') {
+            document.querySelector('.nav-tab-button[onclick="showGames()"]').classList.add('active');
+        } else if (tabName === 'settings') {
+            document.querySelector('.nav-tab-button[onclick="openSettings()"]').classList.add('active');
+        }
+    }
+
+    // Apply all settings functionality
+    function applyAllSettings() {
+        // Apply background image or color
+        const url = document.getElementById('backgroundUrl').value;
+        const bgColor = document.getElementById('backgroundColor').value;
+        
+        if (url) {
+            // If URL is provided, use image
+            document.body.style.backgroundImage = `url('${url}')`;
+            document.body.style.backgroundSize = 'cover';
+            document.body.style.backgroundPosition = 'center';
+            document.body.style.backgroundAttachment = 'fixed';
+            document.body.style.backgroundColor = '';
+            localStorage.setItem('customBackground', url);
+            localStorage.removeItem('customBackgroundColor');
+        } else {
+            // If no URL, use solid color
+            document.body.style.backgroundImage = 'none';
+            document.body.style.backgroundColor = bgColor;
+            localStorage.setItem('customBackgroundColor', bgColor);
+            localStorage.removeItem('customBackground');
+        }
+        
+        // Apply navigation bar color
+        const navColor = document.getElementById('navBarColor').value;
+        document.querySelector('.nav-tab').style.backgroundColor = navColor + 'f2'; // Add transparency
+        localStorage.setItem('customNavColor', navColor);
+        
+        // Apply game button color
+        const buttonColor = document.getElementById('gameButtonColor').value;
+        const gameButtons = document.querySelectorAll('.game-buttons button');
+        gameButtons.forEach(button => {
+            button.style.backgroundColor = buttonColor;
+        });
+        localStorage.setItem('customButtonColor', buttonColor);
+        
+        // Update hover effect for game buttons
+        updateGameButtonHover(buttonColor);
+    }
+
+    function resetAllSettings() {
+        // Reset background
+        document.body.style.backgroundImage = 'none';
+        document.body.style.backgroundColor = '#080808';
+        localStorage.removeItem('customBackground');
+        localStorage.removeItem('customBackgroundColor');
+        document.getElementById('backgroundUrl').value = '';
+        document.getElementById('backgroundColor').value = '#080808';
+        document.getElementById('backgroundColorPreview').style.backgroundColor = '#080808';
+        
+        // Reset navigation bar color
+        document.querySelector('.nav-tab').style.backgroundColor = 'rgba(74, 10, 3, 0.95)';
+        localStorage.removeItem('customNavColor');
+        document.getElementById('navBarColor').value = '#4a0a03';
+        
+        // Reset game button color
+        const gameButtons = document.querySelectorAll('.game-buttons button');
+        gameButtons.forEach(button => {
+            button.style.backgroundColor = '#4a0a03';
+        });
+        localStorage.removeItem('customButtonColor');
+        document.getElementById('gameButtonColor').value = '#4a0a03';
+        
+        // Reset hover effect
+        updateGameButtonHover('#4a0a03');
+    }
+
+    function updateGameButtonHover(color) {
+        // Create a darker shade for hover effect
+        const rgb = hexToRgb(color);
+        const hoverColor = `rgb(${Math.max(0, rgb.r - 30)}, ${Math.max(0, rgb.g - 30)}, ${Math.max(0, rgb.b - 30)})`;
+        
+        // Update the CSS hover rule
+        const style = document.createElement('style');
+        style.id = 'customHoverStyle';
+        style.textContent = `
+            .game-buttons button:hover {
+                background-color: ${hoverColor} !important;
+                transform: scale(1.05);
+                transition: transform 0.2s, background-color 0.3s;
+            }
+        `;
+        
+        // Remove existing custom hover style
+        const existingStyle = document.getElementById('customHoverStyle');
+        if (existingStyle) {
+            existingStyle.remove();
+        }
+        
+        // Add new hover style
+        document.head.appendChild(style);
+    }
+
+    function hexToRgb(hex) {
+        const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+        return result ? {
+            r: parseInt(result[1], 16),
+            g: parseInt(result[2], 16),
+            b: parseInt(result[3], 16)
+        } : null;
+    }
+
+    // Live preview functions
+    function previewBackgroundColor() {
+        const color = document.getElementById('backgroundColor').value;
+        document.getElementById('backgroundColorPreview').style.backgroundColor = color;
+        document.getElementById('backgroundColorHex').textContent = color.toUpperCase();
+    }
+
+    function previewNavColor() {
+        const color = document.getElementById('navBarColor').value;
+        document.getElementById('navColorPreview').style.backgroundColor = color;
+        document.getElementById('navColorHex').textContent = color.toUpperCase();
+    }
+
+    function previewButtonColor() {
+        const color = document.getElementById('gameButtonColor').value;
+        document.getElementById('buttonColorPreview').style.backgroundColor = color;
+        document.getElementById('buttonColorHex').textContent = color.toUpperCase();
+    }
+
+    // Load saved settings on page load
+    window.addEventListener('load', function() {
+        // Load saved background image or color
+        const savedBackground = localStorage.getItem('customBackground');
+        const savedBackgroundColor = localStorage.getItem('customBackgroundColor');
+        
+        if (savedBackground) {
+            document.body.style.backgroundImage = `url('${savedBackground}')`;
+            document.body.style.backgroundSize = 'cover';
+            document.body.style.backgroundPosition = 'center';
+            document.body.style.backgroundAttachment = 'fixed';
+            document.body.style.backgroundColor = '';
+            document.getElementById('backgroundUrl').value = savedBackground;
+        } else if (savedBackgroundColor) {
+            document.body.style.backgroundImage = 'none';
+            document.body.style.backgroundColor = savedBackgroundColor;
+            document.getElementById('backgroundColor').value = savedBackgroundColor;
+            document.getElementById('backgroundColorPreview').style.backgroundColor = savedBackgroundColor;
+            document.getElementById('backgroundColorHex').textContent = savedBackgroundColor.toUpperCase();
+        }
+        
+        // Load saved navigation bar color
+        const savedNavColor = localStorage.getItem('customNavColor');
+        if (savedNavColor) {
+            document.querySelector('.nav-tab').style.backgroundColor = savedNavColor + 'f2';
+            document.getElementById('navBarColor').value = savedNavColor;
+            document.getElementById('navColorPreview').style.backgroundColor = savedNavColor;
+            document.getElementById('navColorHex').textContent = savedNavColor.toUpperCase();
+        }
+        
+        // Load saved game button color
+        const savedButtonColor = localStorage.getItem('customButtonColor');
+        if (savedButtonColor) {
+            const gameButtons = document.querySelectorAll('.game-buttons button');
+            gameButtons.forEach(button => {
+                button.style.backgroundColor = savedButtonColor;
+            });
+            document.getElementById('gameButtonColor').value = savedButtonColor;
+            document.getElementById('buttonColorPreview').style.backgroundColor = savedButtonColor;
+            document.getElementById('buttonColorHex').textContent = savedButtonColor.toUpperCase();
+            updateGameButtonHover(savedButtonColor);
+        }
+    });
+
+    // Close modal when clicking outside of it
+    window.addEventListener('click', function(event) {
+        const modal = document.getElementById('settingsModal');
+        if (event.target === modal) {
+            closeSettings();
         }
     });
   </script>
